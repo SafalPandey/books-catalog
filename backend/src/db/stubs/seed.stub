@@ -1,0 +1,16 @@
+import * as Knex from 'knex';
+
+/**
+ * Adds seed for the table_name table.
+ *
+ * @param {Knex} knex
+ */
+export async function seed(knex: Knex) {
+  await knex('table_name').del();
+  await knex('table_name').insert([
+    {
+      colName: 'rowValue',
+      colName2: 'rowValue'
+    }
+  ]);
+}
