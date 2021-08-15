@@ -17,11 +17,20 @@ const BookDetails = (props: RouteComponentProps<{ id: string }>) => {
     getBookDetails(bookId, dispatch);
   }, [bookId]);
 
-  if (isLoading || bookInfo === null) {
-    return <div>Loading...</div>;
+
+  if (isLoading) {
+    return <div className="text-white">Loading...</div>;
   }
 
-  const { id, title, year, description } = bookInfo;
+  if (error !== null) {
+    return <div className="text-white">{error}</div>;
+  }
+
+  if (bookInfo === null) {
+    return <div className="text-white">No data available!</div>;
+  }
+
+  const { title, year, description } = bookInfo;
 
   return (
     <div className="bg-gray-800 shadow-lg mx-auto rounded-xl overflow-hidden" >
