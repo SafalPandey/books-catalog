@@ -26,7 +26,6 @@ export const INITIAL_STATE: BooksListState = {
  * @returns {BooksListState}
  */
 function reducer(state = INITIAL_STATE, action: BooksListActions): BooksListState {
-  console.log(action, state);
   switch (action.type) {
     case FETCH_BOOKS_LIST_PENDING:
       return {
