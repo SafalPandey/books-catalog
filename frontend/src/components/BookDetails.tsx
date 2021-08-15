@@ -17,7 +17,6 @@ const BookDetails = (props: RouteComponentProps<{ id: string }>) => {
     getBookDetails(bookId, dispatch);
   }, [bookId]);
 
-
   if (isLoading) {
     return <div className="text-white">Loading...</div>;
   }
