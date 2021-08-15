@@ -15,7 +15,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "prettify": "prettier -w src/**/*.tsx src/**/*.ts"
+    "prettify": "prettier -w src/**/*.tsx src/**/*.ts src/__tests__/**/*.tsx src/__tests__/**/*.ts"
   },
   "eslintConfig": {
     "extends": [
