@@ -14,15 +14,10 @@ const formatter = printf((info: any) => {
 
   const meta =
     restMeta && Object.keys(restMeta).length
-      ? JSON.stringify(
-        restMeta,
-        (key: any, value: any) =>
-          keysToFilter.includes(key) ? '******' : value,
-        2
-      )
+      ? JSON.stringify(restMeta, (key: any, value: any) => (keysToFilter.includes(key) ? '******' : value), 2)
       : restMeta instanceof Object
-        ? ''
-        : restMeta;
+      ? ''
+      : restMeta;
 
   return `[ ${ts} ] - [ ${level} ] ${message} ${meta}`;
 });

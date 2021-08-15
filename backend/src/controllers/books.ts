@@ -9,8 +9,7 @@ import { fetchAllBooks, fetchBookById } from '../services/books';
  * @param {Response} res
  */
 export async function getBooks(req: Request, res: Response) {
-  return fetchAllBooks()
-    .then(data => res.status(200).json(data));
+  return fetchAllBooks().then((data) => res.status(200).json(data));
 }
 
 /**
@@ -23,6 +22,6 @@ export async function getBookDetails(req: Request, res: Response, next: NextFunc
   const id = +req.params.id as number;
 
   return fetchBookById(id)
-    .then(data => res.status(200).json(data))
-    .catch(err => next(err));
+    .then((data) => res.status(200).json(data))
+    .catch((err) => next(err));
 }

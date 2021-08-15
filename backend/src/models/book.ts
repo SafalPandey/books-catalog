@@ -1,5 +1,3 @@
-import BookEntity from '../domain/entity/Book';
-
 import bookshelf from '../config/bookshelf';
 
 class Book extends bookshelf.Model<Book> {

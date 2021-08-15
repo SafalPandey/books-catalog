@@ -28,6 +28,6 @@ export async function defaultError(err: any, req: Request, res: Response, next: 
 
   res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
     code: HttpStatus.INTERNAL_SERVER_ERROR,
-    message: HttpStatus.getStatusText(HttpStatus.INTERNAL_SERVER_ERROR),
+    message: HttpStatus.getStatusText(HttpStatus.INTERNAL_SERVER_ERROR)
   });
 }

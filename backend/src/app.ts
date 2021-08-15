@@ -18,7 +18,7 @@ export function init() {
   app.get('/', (req, res) => res.json({ name: config.name, version: config.version }));
 
   app.use(appRouter);
-  app.use(defaultError)
+  app.use(defaultError);
   app.use(notFoundHandler);
 
   try {
