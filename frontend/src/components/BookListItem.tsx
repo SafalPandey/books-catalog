@@ -7,9 +7,17 @@ import { Book as BookEntity } from '../domain/BooksList';
 const MAX_TEXT_LENGTH = 70;
 
 const BookListItem = (props: { book: BookEntity }) => {
-  const { book: { id, title, year } } = props;
+  const {
+    book: { id, title, year }
+  } = props;
 
-  const truncate = (text: string) => text?.length > MAX_TEXT_LENGTH ? `${text.slice(0, MAX_TEXT_LENGTH)}...` : text;
+  /**
+   * Truncates provided text and add ellipsis if its length is greater than max text length.
+   *
+   * @param {string} text
+   * @returns {string}
+   */
+  const truncate = (text: string) => (text?.length > MAX_TEXT_LENGTH ? `${text.slice(0, MAX_TEXT_LENGTH)}...` : text);
 
   return (
     <Link
@@ -24,6 +32,6 @@ const BookListItem = (props: { book: BookEntity }) => {
       </div>
     </Link>
   );
-}
+};
 
 export default BookListItem;

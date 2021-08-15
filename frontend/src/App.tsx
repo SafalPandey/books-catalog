@@ -4,8 +4,6 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Routes from './enums/routes';
 import Header from './components/Header';
 
-import "./index.css";
-
 const BooksList = lazy(() => import('./components/BooksList'));
 const BookDetails = lazy(() => import('./components/BookDetails'));
 

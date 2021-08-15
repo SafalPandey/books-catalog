@@ -1,5 +1,10 @@
-import { BookDetailsActions, FETCH_BOOK_DETAILS_COMPLETED, FETCH_BOOK_DETAILS_PENDING, FETCH_BOOK_DETAILS_REJECTED } from "../actions/bookDetails";
-import BookDetails from "../domain/BookDetails";
+import {
+  BookDetailsActions,
+  FETCH_BOOK_DETAILS_COMPLETED,
+  FETCH_BOOK_DETAILS_PENDING,
+  FETCH_BOOK_DETAILS_REJECTED
+} from '../actions/bookDetails';
+import BookDetails from '../domain/BookDetails';
 
 export interface BookDetailsState {
   isLoading: boolean;
@@ -26,27 +31,25 @@ function reducer(state = INITIAL_STATE, action: BookDetailsActions) {
       return {
         ...state,
         isLoading: true
-      }
+      };
 
     case FETCH_BOOK_DETAILS_COMPLETED:
       return {
         error: null,
         isLoading: false,
-        bookInfo: action.payload,
-      }
+        bookInfo: action.payload
+      };
 
     case FETCH_BOOK_DETAILS_REJECTED:
       return {
-        ...state,
         isLoading: false,
         bookInfo: null,
         error: action.payload?.message
-      }
+      };
 
     default:
       return state;
   }
-
 }
 
 export default reducer;

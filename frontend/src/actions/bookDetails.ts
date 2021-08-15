@@ -26,7 +26,7 @@ export type BookDetailsActions = FetchBookDetailsPending | FetchBookDetailsCompl
 export function getBookDetails(bookId: number, dispatch: Dispatch<BookDetailsActions>) {
   dispatch({ type: FETCH_BOOK_DETAILS_PENDING });
 
-  fetchBookDetails(bookId)
+  return fetchBookDetails(bookId)
     .then((data: BookDetails) => dispatch({ type: FETCH_BOOK_DETAILS_COMPLETED, payload: data }))
-    .catch(e => dispatch({ type: FETCH_BOOK_DETAILS_REJECTED, payload: e }))
+    .catch((e) => dispatch({ type: FETCH_BOOK_DETAILS_REJECTED, payload: e }));
 }

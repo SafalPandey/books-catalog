@@ -23,7 +23,6 @@
 
 import axios from 'axios';
 
-
 /**
  * Util to make http requests.
  */

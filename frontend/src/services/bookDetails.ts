@@ -1,8 +1,8 @@
-import { generatePath } from "react-router-dom";
+import { generatePath } from 'react-router-dom';
 
-import http from "../utils/http";
-import Endpoints from "../enums/endpoints";
-import BookDetails from "../domain/BookDetails";
+import http from '../utils/http';
+import Endpoints from '../enums/endpoints';
+import BookDetails from '../domain/BookDetails';
 
 /**
  * Fetches book details for given bookId from the API.

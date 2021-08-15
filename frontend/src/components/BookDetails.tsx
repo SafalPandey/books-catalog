@@ -1,4 +1,4 @@
-import React, { } from 'react';
+import React from 'react';
 
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 
@@ -32,7 +32,7 @@ const BookDetails = (props: RouteComponentProps<{ id: string }>) => {
   const { title, year, description } = bookInfo;
 
   return (
-    <div className="bg-gray-800 shadow-lg mx-auto rounded-xl overflow-hidden" >
+    <div className="bg-gray-800 shadow-lg mx-auto rounded-xl overflow-hidden">
       <div className="flex items-center justify-between space-x-8 p-6 bg-gray-700 shadow-lg">
         <div className="flex items-center">
           <Link
@@ -42,15 +42,19 @@ const BookDetails = (props: RouteComponentProps<{ id: string }>) => {
           >
             Back
           </Link>
-          <h1 className="inline ml-4 text-xl text-white font-semibold" title="Title">{title}</h1>
+          <h1 className="inline ml-4 text-xl text-white font-semibold" title="Title">
+            {title}
+          </h1>
         </div>
         <span className="bg-indigo-600 float-right p-1.5 text-white text-xs font-semibold rounded-lg m-2" title="Year">
           {year}
         </span>
       </div>
-      <p className="py-6 px-6 text-lg text-white" title="Description">{description}</p>
+      <p className="py-6 px-6 text-lg text-white" title="Description">
+        {description}
+      </p>
     </div>
   );
-}
+};
 
 export default withRouter(BookDetails);

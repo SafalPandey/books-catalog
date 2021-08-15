@@ -1,7 +1,7 @@
 export interface Action<T> {
-  type: T
+  type: T;
 }
 
 export interface ActionWithPayload<T, P> extends Action<T> {
-  payload: P
+  payload: P;
 }

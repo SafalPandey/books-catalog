@@ -10,7 +10,7 @@ const BookList = () => {
 
   React.useEffect(() => {
     getBooksList(dispatch);
-  }, [])
+  }, []);
 
   if (isLoading) {
     return <div className="text-white">Loading...</div>;
@@ -27,10 +27,12 @@ const BookList = () => {
   return (
     <div className="flex justify-center items-center px-20">
       <div className="space-y-3">
-        {books.map(book => <BookListItem key={book.id} book={book} />)}
+        {books.map((book) => (
+          <BookListItem key={book.id} book={book} />
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default BookList;

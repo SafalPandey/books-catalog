@@ -26,7 +26,7 @@ export type BooksListActions = FetchBooksListPending | FetchBooksListCompleted |
 export function getBooksList(dispatch: Dispatch<BooksListActions>) {
   dispatch({ type: FETCH_BOOKS_LIST_PENDING });
 
-  fetchBooksList()
+  return fetchBooksList()
     .then((data: BooksList) => dispatch({ type: FETCH_BOOKS_LIST_COMPLETED, payload: data }))
-    .catch(e => dispatch({ type: FETCH_BOOKS_LIST_REJECTED, payload: e }))
+    .catch((e) => dispatch({ type: FETCH_BOOKS_LIST_REJECTED, payload: e }));
 }

@@ -3,8 +3,8 @@ import {
   FETCH_BOOKS_LIST_PENDING,
   FETCH_BOOKS_LIST_REJECTED,
   FETCH_BOOKS_LIST_COMPLETED
-} from "../actions/booksList";
-import BooksList from "../domain/BooksList";
+} from '../actions/booksList';
+import BooksList from '../domain/BooksList';
 
 export interface BooksListState {
   isLoading: boolean;
@@ -19,7 +19,7 @@ export const INITIAL_STATE: BooksListState = {
 };
 
 /**
- * Reducer for book details.
+ * Reducer for books list.
  *
  * @param {BooksListState} state
  * @param {BookDetailsActions} action
@@ -31,26 +31,25 @@ function reducer(state = INITIAL_STATE, action: BooksListActions): BooksListStat
       return {
         ...state,
         isLoading: true
-      }
+      };
 
     case FETCH_BOOKS_LIST_COMPLETED:
       return {
         error: null,
         isLoading: false,
-        books: action.payload,
-      }
+        books: action.payload
+      };
 
     case FETCH_BOOKS_LIST_REJECTED:
       return {
         books: [],
         isLoading: false,
         error: action.payload?.message
-      }
+      };
 
     default:
       return state;
   }
-
 }
 
 export default reducer;
