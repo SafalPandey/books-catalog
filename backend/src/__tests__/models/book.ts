@@ -1,4 +1,4 @@
-import Book from "../../models/book";
+import Book from '../../models/book';
 
 describe('Model: Book', () => {
   it('should use correct table', async () => {
@@ -6,6 +6,5 @@ describe('Model: Book', () => {
     expect(new Book().tableName).toEqual('books');
     expect(new Book().requireFetch).toEqual(false);
     expect(new Book().hasTimestamps).toEqual(true);
-  })
-})
-
+  });
+});

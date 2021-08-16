@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 
-import { getBookDetails } from '../actions/bookDetails';
 import Routes from '../enums/routes';
+import { getBookDetails } from '../actions/bookDetails';
 import bookDetailsReducer, { INITIAL_STATE } from '../reducers/bookDetails';
 
 const BookDetails = (props: RouteComponentProps<{ id: string }>) => {

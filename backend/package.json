@@ -13,9 +13,9 @@
     "make:migration": "knex migrate:make --knexfile=knexfile.ts -x ts",
     "lint": "eslint {src,scripts,test}/**/*.{ts,json} --no-error-on-unmatched-pattern",
     "lint:fix": "eslint --fix {src,scripts,test}/**/*.{ts,json} --no-error-on-unmatched-pattern",
-    "prettify": "prettier -w src/**/*.ts",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "test:coverage": "cross-env NODE_ENV=test jest --testTimeout=10000 --coverage --watchAll=false"
+    "prettify": "prettier -w src/**/*.ts src/__tests__/**/*.ts",
+    "test": "cross-env NODE_ENV=test jest src/__tests__/**/*.ts --testTimeout=10000",
+    "test:coverage": "cross-env NODE_ENV=test jest src/__tests__/**/*.ts --testTimeout=10000 --coverage --watchAll=false"
   },
   "husky": {
     "hooks": {

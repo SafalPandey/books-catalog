@@ -9,7 +9,7 @@ export default {
   name: pkg.name,
   version: pkg.version,
   port: process.env.APP_PORT || DEFAULT_PORT,
-  corsWhitelist: process.env.CORS_WHITELIST?.split(',') || 'http://localhost:3000',
+  corsWhitelist: process.env.CORS_WHITELIST?.split(','),
   logging: {
     dir: process.env.LOGGING_DIR || 'logs',
     level: process.env.LOGGING_LEVEL || 'debug',
