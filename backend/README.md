@@ -12,9 +12,12 @@ cp .env.example .env
 ## Usage
 1. Start service and postgres db with docker-compose
 ```bash
-yarn start
+docker-compose up -d
 ```
-
+2. View api logs
+```bash
+docker-compose logs -f api
+```
 ## Tests
 
 1. To run tests
