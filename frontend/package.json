@@ -14,6 +14,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "test:coverage": "craco test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "prettify": "prettier -w src/**/*.tsx src/**/*.ts src/__tests__/**/*.tsx src/__tests__/**/*.ts"
   },
