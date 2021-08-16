@@ -37,7 +37,7 @@ module.exports = {
       user: process.env.DB_USER,
       port: process.env.DB_PORT,
       password: process.env.DB_PASSWORD,
-      database: process.env.TEST_DB_NAME
+      database: process.env.DB_PASSWORD
     },
     migrations: {
       directory: 'src/db/migrations',
