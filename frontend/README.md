@@ -10,7 +10,8 @@ cp .env.example .env
 2. Update env variables based on your configuration
 
 ## Usage
-1. Start service and postgres db with docker-compose
+
+1. Start application
 ```bash
 yarn start
 ```
