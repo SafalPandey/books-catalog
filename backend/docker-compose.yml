@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   postgres:
     image: "postgres:10-alpine"
@@ -13,16 +11,33 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - '${DB_DATA_PATH:-./.pgdata}:/var/lib/postgresql/data'
-
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - custom
+      
   api:
     image: "node:12-alpine"
     container_name: "books-catalog-api"
+    networks:
+      - custom
     volumes:
-      - "./:/source"
+      - "./src:/source/src"
+      - "./package.json:/source/package.json"
+      - "./yarn.lock:/source/yarn.lock"
+      - "./.env:/source/.env"
+      - "./babel.config.js:/source/babel.config.js"
+      - "./knexfile.ts:/source/knexfile.ts"
+      - "./tsconfig.json:/source/tsconfig.json"
     working_dir: /source
     depends_on:
       - postgres
     ports:
       - "${APP_PORT:-8000}:${APP_PORT:-8000}"
     command: sh -c "yarn && yarn start:dev"
+
+volumes:
+  pgdata:
+
+networks:
+  custom:
+    driver: bridge
