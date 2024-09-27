@@ -7,7 +7,7 @@ import {
 import BooksList from '../domain/BooksList';
 
 export interface BooksListState {
-  isLoading: boolean;
+  isLoading?: boolean;
   error: string | null;
   books: BooksList;
 }
@@ -35,15 +35,15 @@ function reducer(state = INITIAL_STATE, action: BooksListActions): BooksListStat
 
     case FETCH_BOOKS_LIST_COMPLETED:
       return {
+        ...state,
         error: null,
-        isLoading: false,
         books: action.payload
       };
 
     case FETCH_BOOKS_LIST_REJECTED:
       return {
+        ...state,
         books: [],
-        isLoading: false,
         error: action.payload?.message
       };
 

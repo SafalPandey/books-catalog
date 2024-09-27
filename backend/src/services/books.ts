@@ -6,7 +6,7 @@ import logger from '../utils/logger';
  */
 export async function fetchAllBooks() {
   logger.info('Fetching all books from DB.');
-  const data = await new Book().fetchAll({ columns: ['id', 'title', 'year'] });
+  const data = await new Book().fetchAll({ columns: ['id', 'title', 'year','created_at'] });
 
   logger.info(`Fetched ${data.length} books from DB.`);
 

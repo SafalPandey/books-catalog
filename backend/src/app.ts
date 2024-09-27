@@ -8,19 +8,13 @@ import { defaultError, notFoundHandler } from './controllers/error';
 
 export function init() {
   const app = express();
-
-  app.use(cors({ origin: config.corsWhitelist }));
-
-  // Body parsing Middleware
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-
   app.get('/', (req, res) => res.json({ name: config.name, version: config.version }));
-
   app.use(appRouter);
+  app.use(cors({ origin: config.corsWhitelist }));
   app.use(defaultError);
   app.use(notFoundHandler);
-
   try {
     app.listen(config.port, () => {
       logger.info(`Listening for requests on port: ${config.port}`);

@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import * as pkg from '../../package.json';
 import { DEFAULT_PORT } from '../constants/server';
 
-dotenv.config();
+dotenv();
 
 export default {
   name: pkg.name,
